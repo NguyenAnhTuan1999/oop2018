@@ -7,7 +7,7 @@ public class StudentManagement {
 
     public boolean sameGroup(Student s1, Student s2) {
         // TODO:
-        return (s1.getGroup() == s2.getGroup());
+        return (s1.getGroup().equals(s2.getGroup()));
         //return false; // xóa dòng này sau khi cài đặt
     }
 
@@ -20,7 +20,7 @@ public class StudentManagement {
         for(int i=1; i<100; i++){
             int s=0;
             for(int j=0; j<k; j++){
-                if(students[i].getGroup() != a[j]) {
+                if( !(students[i].getGroup().equals(a[j])) ){
                     s++;
                 }
             }
@@ -33,7 +33,7 @@ public class StudentManagement {
         for(int j=0; j<k; j++) {
             System.out.println("Lop " + a[j] + " gom cac sinh vien: ");
             for (int i = 0; i < 100; i++) {
-                if (students[i].getGroup() == a[j]){
+                if ( students[i].getGroup().equals(a[j]) ){
                     System.out.println("Ten: " + students[i].getName());
                     System.out.println("MSSV: " + students[i].getId());
                     System.out.println("Email: " + students[i].getEmail());
@@ -47,12 +47,13 @@ public class StudentManagement {
         Student[] a = new Student[100];
         int j=0;
         for(int i=0; i<100; i++){
-            if(students[i].getId() != id){
+            if( !(students[i].getId().equals(id)) ){
                 a[j] = students[i];
                 j++;
             }
         }
         students = a;
+
 //        for(int i=0; i<100; i++){
 //            if(students[i].getId() == id){
 //                students[i].setName(null);
@@ -61,6 +62,8 @@ public class StudentManagement {
 //                students[i].setEmail(null);
 //            }
 //        }
+
+
     }
 
 //    void addtolist(Student a, int begin, int end){
@@ -75,6 +78,8 @@ public class StudentManagement {
 
     public static void main(String[] args) {
         // TODO:
+        //Bai2
+        Student one = new Student();
         //Bai6
         Student a = new Student();
         a.setName("Tuan");
@@ -103,13 +108,13 @@ public class StudentManagement {
         System.out.println(h.sameGroup(e, f));
         System.out.println(h.sameGroup(f, g));
 
-//        h.addtolist(f, 0, 0);
-//        h.addtolist(g, 1, 50);
+//        h.addtolist(g, 0, 0);
+//        h.addtolist(e, 1, 50);
 //        h.addtolist(e, 51, 60);
 //        h.addtolist(f, 61, 99);
 //        h.studentsByGroup();
 //        h.removeStudent("123");
-//        for(int i=0; i<60; i++){
+//        for(int i=0; i<40; i++){
 //            h.geth(i);
 //            System.out.println(i);
 //        }
