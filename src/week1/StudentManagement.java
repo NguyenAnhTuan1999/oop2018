@@ -15,28 +15,31 @@ public class StudentManagement {
         // TODO:
         // Tao mang chua ten cua cac lop
         String[] a = new String[100];
-        a[0] = students[0].getGroup();
-        int k=1;
-        for(int i=1; i<100; i++){
-            int s=0;
-            for(int j=0; j<k; j++){
-                if( !(students[i].getGroup().equals(a[j])) ){
-                    s++;
+        int k=0;
+        for(int i=0; i<100; i++){
+            if(students[i] != null) {
+                int s = 0;
+                for (int j = 0; j < k; j++) {
+                    if (!(students[i].getGroup().equals(a[j]))) {
+                        s++;
+                    }
                 }
-            }
-            if(s == k){
-                a[k] = students[i].getGroup();
-                k++;
+                if (s == k) {
+                    a[k] = students[i].getGroup();
+                    k++;
+                }
             }
         }
         // In danh sach sinh vien theo lop
         for(int j=0; j<k; j++) {
             System.out.println("Lop " + a[j] + " gom cac sinh vien: ");
             for (int i = 0; i < 100; i++) {
-                if ( students[i].getGroup().equals(a[j]) ){
-                    System.out.println("Ten: " + students[i].getName());
-                    System.out.println("MSSV: " + students[i].getId());
-                    System.out.println("Email: " + students[i].getEmail());
+                if(students[i] != null) {
+                    if (students[i].getGroup().equals(a[j])) {
+                        System.out.println("Ten: " + students[i].getName());
+                        System.out.println("MSSV: " + students[i].getId());
+                        System.out.println("Email: " + students[i].getEmail());
+                    }
                 }
             }
         }
@@ -45,36 +48,21 @@ public class StudentManagement {
     void removeStudent(String id) {
         // TODO:
         Student[] a = new Student[100];
-        int j=0;
-        for(int i=0; i<100; i++){
-            if( !(students[i].getId().equals(id)) ){
-                a[j] = students[i];
-                j++;
+        int j = 0;
+        for (int i = 0; i < 100; i++) {
+            if(students[i] != null ) {
+                if ( !(students[i].getId().equals(id)) ){
+                    a[j] = students[i];
+                    j++;
+                }
             }
         }
         students = a;
-
-//        for(int i=0; i<100; i++){
-//            if(students[i].getId() == id){
-//                students[i].setName(null);
-//                students[i].setId(null);
-//                students[i].setGroup(null);
-//                students[i].setEmail(null);
-//            }
-//        }
-
-
     }
 
-//    void addtolist(Student a, int begin, int end){
-//        for(int i=begin; i<=end; i++){
-//            students[i] = a;
-//        }
-//    }
-//
-//    void geth(int i){
-//        System.out.println(students[i].getName() + "\n" + students[i].getId());
-//    }
+    void addtolist(Student a, int i){
+            students[i] = a;
+    }
 
     public static void main(String[] args) {
         // TODO:
@@ -108,16 +96,13 @@ public class StudentManagement {
         System.out.println(h.sameGroup(e, f));
         System.out.println(h.sameGroup(f, g));
 
-//        h.addtolist(g, 0, 0);
-//        h.addtolist(e, 1, 50);
-//        h.addtolist(e, 51, 60);
-//        h.addtolist(f, 61, 99);
-//        h.studentsByGroup();
-//        h.removeStudent("123");
-//        for(int i=0; i<40; i++){
-//            h.geth(i);
-//            System.out.println(i);
-//        }
+        h.addtolist(g, 0);
+        h.addtolist(e, 1);
+        h.addtolist(c, 2);
+        h.addtolist(f, 3);
+
+        h.removeStudent("789");
+        h.studentsByGroup();
 
     }
 }
