@@ -4,11 +4,27 @@ public class Task1 {
 
     public static int gcd(int a, int b) {
         // TODO: Tính ước chung lớn nhất của 2 số a, b
-        return 0;
+        if(a<b) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        return (b == 0) ? a : gcd(b, b % a);
     }
 
     public static int fibonacci(int n) {
         // TODO: Tìm số fibonacci ở vị trí n
-        return 0;
+        if(n == 0) return 0;
+        else if(n == 1) return 1;
+        else{
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+
+    public static void main(String[] args){
+        System.out.println("UCLN : " + gcd(14, 7));
+        for(int i=0; i<10; i++) {
+            System.out.println(fibonacci(i));
+        }
     }
 }
