@@ -27,8 +27,9 @@ public class Fraction {
 
     public Fraction multiply(Fraction other) {
         // TODO: Phương thức nhân hai phân số (this và other), trả về đối tượng Fraction mới
-        Fraction a = new Fraction(this.numerator*other.numerator, this.denominator*other.denominator);
-        return a;
+//        Fraction a = new Fraction(this.numerator*other.numerator, this.denominator*other.denominator);
+//        return a;
+        return new Fraction(this.numerator*other.numerator, this.denominator*other.denominator);
     }
 
     public Fraction divide(Fraction other) {
@@ -80,7 +81,7 @@ public class Fraction {
     }
 
     public boolean equals(Object obj){
-        return (this == obj);
+        return (this.numerator*((Fraction) obj).denominator - this.denominator*((Fraction) obj).numerator == 0);
     }
 
     public static void main(String[] args){
