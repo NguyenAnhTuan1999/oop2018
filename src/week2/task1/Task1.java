@@ -4,11 +4,11 @@ public class Task1 {
 
     public static int gcd(int a, int b) {
         // TODO: Tính ước chung lớn nhất của 2 số a, b
-        if(a<b) {
-            int temp = a;
-            a = b;
-            b = temp;
-        }
+//        if(a<b) {
+//            int temp = a;
+//            a = b;
+//            b = temp;
+//        }
         return (b == 0) ? a : gcd(b, b % a);
     }
 
@@ -22,7 +22,7 @@ public class Task1 {
     }
 
     public static void main(String[] args){
-        System.out.println("UCLN : " + gcd(14, 7));
+        System.out.println("UCLN : " + gcd(6, 9));
         for(int i=0; i<10; i++) {
             System.out.println(fibonacci(i));
         }

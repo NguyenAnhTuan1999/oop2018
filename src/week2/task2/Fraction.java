@@ -36,6 +36,7 @@ public class Fraction {
         Fraction a = new Fraction(this.numerator*other.denominator, this.denominator*other.numerator);
         return a;
     }
+
     public void printlnFraction(){
         if(this.numerator == 0){
             System.out.println(0);
@@ -78,22 +79,24 @@ public class Fraction {
         return a;
     }
 
-    public boolean equals(Fraction a){
-        return (this.simplifyFraction().numerator == a.simplifyFraction().numerator && this. simplifyFraction().denominator == a.simplifyFraction().denominator);
+    public boolean equals(Object obj){
+        return (this == obj);
     }
 
     public static void main(String[] args){
         Fraction a = new Fraction(1, 2);
-        Fraction b = new Fraction(6, 3);
+        Fraction b = new Fraction(4, 6);
         System.out.print("a + b = " );
         a.add(b).printlnFraction();
         System.out.print("a - b = ");
         a.subtract(b).printlnFraction();
         System.out.print("a.b = ");
-        a.multiply(b).simplifyFraction().printlnFraction();
+        a.multiply(b).printlnFraction();
         System.out.print("a:b = ");
-        a.divide(b).simplifyFraction().printlnFraction();
-        b.simplifyFraction().printlnFraction();
+        a.divide(b).printlnFraction();
+        System.out.println(a.equals(b));
+        b.printlnFraction();
+
 
     }
 }
