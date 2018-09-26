@@ -19,7 +19,7 @@ public class Task3 {
 
 //TODO: khai báo 3 class tương ứng với 3 đối tượng thực tế ở dưới
 // Class 1:
-public class XeMay{
+class XeMay{
 
     // Cac thuoc tinh:
     String HangXe, TenXe;
@@ -68,7 +68,7 @@ public class XeMay{
 }
 
 // Class 2:
-public class HocPhan{
+class HocPhan{
 
     // Cac thuoc tinh:
     String TenHocPhan, TenGiangVien;
@@ -123,7 +123,7 @@ public class HocPhan{
 }
 
 // Class 3:
-public class DiemThiTHPTQGKhoiA{
+class DiemThiTHPTQGKhoiA{
     // Cac thuoc tinh:
     int DiemToan, DiemLi, DiemHoa;
 
