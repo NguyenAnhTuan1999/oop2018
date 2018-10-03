@@ -80,8 +80,9 @@ public class Fraction {
         return a;
     }
 
-    public boolean equals(Object obj){
-        return (this.numerator*((Fraction) obj).denominator - this.denominator*((Fraction) obj).numerator == 0);
+    public boolean equals(Object object){
+        Fraction a = (Fraction) object;
+        return (this.numerator*a.denominator - this.denominator*a.numerator == 0);
     }
 
     public static void main(String[] args){
