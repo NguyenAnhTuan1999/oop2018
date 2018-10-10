@@ -7,3 +7,33 @@
  * @version 0.1
  */
 package week4.task2;
+
+class HoaQuan{
+    int soLuong;
+    String nguonGocXuatXu;
+
+    public static void main(String[] args){
+        Cam a = new Cam();
+        a.soLuong = 300;
+        Tao b = new Tao();
+        b.soLuong = 100;
+        System.out.print("So luong cam: " + a.soLuong);
+    }
+}
+
+class Cam extends HoaQuan{
+    int giaBan;
+
+}
+
+class Tao extends HoaQuan{
+
+}
+
+class CamThanhPhong extends  Cam{
+
+}
+
+class CamSanh extends Cam{
+
+}
