@@ -9,9 +9,11 @@
 package week4.task1;
 
 class Shape{
-    String color = "red";
-    boolean filled = true;
+    // Thuoc tinh:
+    private String color = "red";
+    private boolean filled = true;
 
+    // Constructor:
     public Shape(){
 
     }
@@ -20,6 +22,7 @@ class Shape{
 
     }
 
+    // Getter/Setter:
     public String getColor() {
         return color;
     }
@@ -42,15 +45,19 @@ class Shape{
     }
 
     public static void main(String[] args){
-        Square a = new Square();
-        System.out.print(a.getArea());
+        Circle c = new Circle();
+        c.setRadius(4.5);
+        System.out.println("Chu vi: " + c.getPerimeter());
+        System.out.println("Dien tich: " + c.getArea());
     }
 }
 
 class Circle extends Shape{
-    double radius = 1.0;
-    final double PI = 3.14;
+    // Thuoc tinh:
+    private double radius = 1.0;
+    private final double PI = 3.14;
 
+    // Constructor:
     public Circle(){
 
     }
@@ -63,6 +70,7 @@ class Circle extends Shape{
 
     }
 
+    // Getter/Setter:
     public double getRadius() {
         return radius;
     }
@@ -86,9 +94,11 @@ class Circle extends Shape{
 }
 
 class Rectangle extends Shape{
-    double width = 1.0;
-    double length = 1.0;
+    // Thuoc tinh:
+    private double width = 1.0;
+    private double length = 1.0;
 
+    // Constructor:
     public Rectangle(){
 
     }
@@ -97,6 +107,7 @@ class Rectangle extends Shape{
 
     }
 
+    // Getter/Stter:
     public double getWidth() {
         return width;
     }
@@ -128,6 +139,8 @@ class Rectangle extends Shape{
 }
 
 class Square extends Rectangle{
+
+    // Constructor:
     public Square(){
 
     }
@@ -140,21 +153,22 @@ class Square extends Rectangle{
 
     }
 
+    // Getter/Setter:
     public double getSide(){
-        return width;
+        return getWidth();
     }
 
     public void setSide(double side){
-        width = side;
-        length = side;
+        setWidth(side);
+        setLength(side);
     }
 
     public void setWidth(double side){
-        width = side;
+        setWidth(side);
     }
 
     public void setLength(double side){
-        length = side;
+        setLength(side);
     }
 
     @Override
