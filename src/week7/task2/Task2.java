@@ -2,6 +2,8 @@ package week7.task2;
 
 import week7.task1.Addition;
 import week7.task1.BinaryExpression;
+import week7.task1.Numeral;
+import week7.task1.Square;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -24,8 +26,8 @@ public class Task2 {
         System.out.println("a/b = " + a/b);
     }
 
-    public void castObject(BinaryExpression binaryExpression) throws ClassCastException {
-        System.out.println(((Addition) binaryExpression).toString());
+    public void castObject(Object object) throws ClassCastException {
+        System.out.println((String) object);
     }
 
     public void readFile(String filePath) throws IOException {
@@ -47,14 +49,14 @@ public class Task2 {
         try {
             example.printLengthOfString(null);
         } catch (NullPointerException e) {
-            System.out.println("Gap loi: " + e.getMessage());
+            System.out.println("Gap loi: " + e);
         }
 
         try {
             int[] a = {1, 2, 3};
             example.printArray(a);
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Gap loi: Vuot qua gioi han cua mang: " + e.getMessage());
+            System.out.println("Gap loi: " + e);
         }
 
         try {
@@ -64,7 +66,7 @@ public class Task2 {
         }
 
         try {
-            example.castObject(new BinaryExpression());
+            example.castObject(10);
         } catch (ClassCastException e) {
             System.out.println("Gap loi: " + e.getMessage());
         }

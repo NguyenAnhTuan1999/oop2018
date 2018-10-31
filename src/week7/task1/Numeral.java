@@ -9,7 +9,11 @@ public class Numeral extends Expression {
     }
 
     public Numeral(){
+    }
 
+    @Override
+    public String toString() {
+        return null;
     }
 
     @Override

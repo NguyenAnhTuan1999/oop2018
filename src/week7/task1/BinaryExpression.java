@@ -1,17 +1,13 @@
 package week7.task1;
 
-public class BinaryExpression extends Expression {
+public abstract class BinaryExpression extends Expression {
 
-    public Expression left(){
-        return this;
-    }
+    public abstract Expression left();
 
-    public Expression right(){
-        return this;
-    }
+    public abstract Expression right();
 
     @Override
-    public int evaluate() {
-        return 0;
+    public String toString() {
+        return null;
     }
 }

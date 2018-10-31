@@ -9,6 +9,11 @@ public class Square extends Expression {
     }
 
     @Override
+    public String toString() {
+        return null;
+    }
+
+    @Override
     public int evaluate() {
         int expressionValue = this.expression.evaluate();
         return expressionValue*expressionValue;

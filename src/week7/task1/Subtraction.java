@@ -1,11 +1,14 @@
 package week7.task1;
 
-public class Addition extends BinaryExpression {
+/**
+ * Created by CCNE on 31/10/2018.
+ */
+public class Subtraction extends BinaryExpression {
 
     private Expression left;
     private Expression right;
 
-    public Addition(Expression firstExpression, Expression secondExpression){
+    public Subtraction(Expression firstExpression, Expression secondExpression){
         left = firstExpression;
         right = secondExpression;
     }
@@ -22,6 +25,6 @@ public class Addition extends BinaryExpression {
 
     @Override
     public int evaluate() {
-        return left.evaluate() + right.evaluate();
+        return left.evaluate() - right.evaluate();
     }
 }
