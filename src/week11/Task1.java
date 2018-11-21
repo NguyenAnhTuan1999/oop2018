@@ -4,35 +4,11 @@ import java.util.Arrays;
 
 public class Task1 {
 
-    private static <T extends Byte> void sort( T[] t) {
+    private static <T extends Comparable> void sort( T[] t) {
         Arrays.sort(t);
     }
 
-    private static <T extends Short> void sort( T[] t) {
-        Arrays.sort(t);
-    }
-
-    private static <T extends Integer> void sort( T[] t) {
-        Arrays.sort(t);
-    }
-
-    private static <T extends Long> void sort( T[] t) {
-        Arrays.sort(t);
-    }
-
-    private static <T extends Float> void sort( T[] t) {
-        Arrays.sort(t);
-    }
-
-    private static <T extends Double> void sort( T[] t) {
-        Arrays.sort(t);
-    }
-
-    private static <T extends Character> void sort( T[] t) {
-        Arrays.sort(t);
-    }
-
-    private static <T extends Comparable <T>> void printArray(T[] t) {
+    private static <T extends Comparable> void printArray(T[] t) {
         for (int i = 0; i < t.length; i++) {
             System.out.print(t[i] + " ");
         }
